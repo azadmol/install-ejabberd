@@ -1,6 +1,6 @@
 #!/bin/bash
-# chmod u+x install-sh
-# sudo ./install-sh
+# chmod u+x install.sh
+# sudo ./install.sh
 
 # Prepare
 if [ $(id -u) != "0" ]; then
@@ -103,9 +103,10 @@ cd ../
 
 # config ejabberd
 patch /etc/ejabberd/ejabberd.yml ejabberd.yml.patch.tmp
-ejabberdctrl stop
-ejaaberdctrl start
-
+ejabberdctl stop
+sleep 10
+ejabberdctl start
+sleep 10
 
 # preserve users
 for i in {0..199}

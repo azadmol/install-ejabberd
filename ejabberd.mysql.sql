@@ -16,6 +16,10 @@
 -- 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 --
 
+CREATE DATABASE ejabberd;
+
+USE ejabberd;
+
 CREATE TABLE users (
     username varchar(250) PRIMARY KEY,
     email varchar(100) DEFAULT NULL UNIQUE,
