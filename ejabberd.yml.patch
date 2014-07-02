@@ -1,0 +1,29 @@
+62a63
+>   - "innonetwork.com"
+80c81
+<     port: 5222
+---
+>     port: 6222
+195c196
+< auth_method: internal
+---
+> ## auth_method: internal
+216c217
+< ## auth_method: odbc
+---
+> auth_method: odbc
+296a298,302
+> odbc_type: mysql
+> odbc_server: "127.0.0.1"
+> odbc_database: "ejabberd"
+> odbc_username: "${ejabberd_mysql_username}"
+> odbc_password: "${ejabberd_mysql_password}"
+554c560,565
+<   ## mod_proxy65: {}
+---
+>   mod_proxy65:
+>     host: "proxy.innonetwork.com"
+>     hostname: "proxy.innonetwork.com"
+>     name: "SOCKS5 Bytestreams"
+>     ip: "${ejabberd_proxy65_ip}"
+>     port: 7777

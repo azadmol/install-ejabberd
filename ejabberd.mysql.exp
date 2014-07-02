@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+
+if { $argc != 2 } {
+	send_user "Usage:ejabberd.mysql.exp username password\n"
+	exit
+}
+
+set username [lindex $argv 0]
+set password [lindex $argv 1]
+
+send_user "$username $password"
+
+spawn ./ejabberd.mysql.sh $username
+
+expect {
+	"Enter password:" {
+		send "$password\r"
+	}
+}
+
+expect eof
