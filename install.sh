@@ -103,8 +103,7 @@ cd ../
 
 # config ejabberd
 patch /etc/ejabberd/ejabberd.yml ejabberd.yml.patch.tmp
-ejabberdctl stop
-sleep 10
+sleep 2
 ejabberdctl start
 sleep 10
 
