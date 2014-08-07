@@ -18,8 +18,28 @@
 > odbc_database: "ejabberd"
 > odbc_username: "${ejabberd_mysql_username}"
 > odbc_password: "${ejabberd_mysql_password}"
-554c560,565
+533c539
+<   mod_irc: {}
+---
+>   ## mod_irc: {}
+539c545
+<   mod_muc: 
+---
+>   ## mod_muc: 
+541,544c547,550
+<     access: muc
+<     access_create: muc_create
+<     access_persistent: muc_create
+<     access_admin: muc_admin
+---
+>     ## access: muc
+>     ## access_create: muc_create
+>     ## access_persistent: muc_create
+>     ## access_admin: muc_admin
+554,556c560,567
 <   ## mod_proxy65: {}
+<   mod_pubsub: 
+<     access_createnode: pubsub_createnode
 ---
 >   mod_proxy65:
 >     host: "proxy.innonetwork.com"
@@ -27,3 +47,43 @@
 >     name: "SOCKS5 Bytestreams"
 >     ip: "${ejabberd_proxy65_ip}"
 >     port: 7777
+>   ## mod_pubsub: 
+>     ## access_createnode: pubsub_createnode
+558c569
+<     ignore_pep_from_offline: true
+---
+>     ## ignore_pep_from_offline: true
+561,566c572,577
+<     last_item_cache: false
+<     plugins: 
+<       - "flat"
+<       - "hometree"
+<       - "pep" # pep requires mod_caps
+<   mod_register: 
+---
+>     ## last_item_cache: false
+>     ## plugins: 
+>     ##   - "flat"
+>     ##   - "hometree"
+>     ##   - "pep" # pep requires mod_caps
+>   ## mod_register: 
+581,585c592,596
+<     welcome_message: 
+<       subject: "Welcome!"
+<       body: |-
+<         Hi.
+<         Welcome to this XMPP server.
+---
+>     ## welcome_message: 
+>       ## subject: "Welcome!"
+>       ## body: |-
+>         ## Hi.
+>         ## Welcome to this XMPP server.
+597c608
+<     ip_access: trusted_network
+---
+>     ## ip_access: trusted_network
+604c615
+<     access: register
+---
+>     ## access: register
